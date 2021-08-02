@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Directory Creater</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Style the tile */
+.navBar {
+  padding: 5px;
+  text-align: left;
+  background: lightgrey;
+  color: black;
+}
+
+/* Increase the font size of the h1 element */
+.navBar h1 {
+  font-size: 30px;
+}
+
+.mainMenuButton {
+  background: lightgrey;
+  text-align: left;
+  color: black;
+  cursor: pointer;
+}
+.mainMenuButton h1 {
+  font-size: 30px;
+}
+/* Style the go back button */
+.goBack {
+  position: relative;
+  bottom: 63px;
+  right: 345px;
+  padding: 10px;
+  float: right;
+  width: 90px;
+  height: 55px;
+  text-align: center;
+  background: grey;
+  color: white;
+  border: 2px solid;
+  cursor: pointer;
+}
+
+.goBack h1 {
+  font-size: 12px;
+}
+
+
+/* Style the Create Profile Button*/
+.createProfile {
+  position: relative;
+  bottom: 68px;
+  left: 175px;
+  float: right;
+  width: 55px;
+  color: white;
+  background:grey;
+  padding-top: 3px;
+  padding-right: 3px;
+  padding-left: 3px;
+  border: 2px solid;
+  cursor: pointer;
+}
+
+/* Style the Upload File Button */
+.uploadFile {
+  position: relative;
+  bottom: 63px;
+  right: 15px;
+  padding: 10px;
+  float: right;
+  width: 100px;
+  text-align: center;
+  background: grey;
+  color: white;
+  border: 2px solid;
+  cursor: pointer;
+}
+
+.uploadFile h1 {
+  font-size: 12px;
+}
+
+/* The line which seperates the title from the buttons */
+.titleline {
+  background: white;
+    position: relative;
+    bottom: 100px;
+    right: 205px;
+    padding: 5px;
+    float: right;
+    height: 150px;
+}
+
+/* The Search bar design */
+.searchBar {
+  padding: 3px;
+  text-align: left;
+  position: relative;
+  bottom: -10px;
+  right: 250px;
+  padding: 10px;
+  float: right;
+  width: 908px;
+  background: grey;
+  color: black;
+  border: 2px solid;
+}
+</style>
+</head>
+<body>
+
+<div class="navBar">
+    <a href="/Users/dorgo/OneDrive/Desktop/Web%20App/OrganizationalApp.html" class="mainMenuButton">
+      <h1>Organize</h1>
+    </a>
+    <button  onclick="goBack()" class="goBack">
+      <h1>Go Back</h1>
+    </button>
+    <script>
+      function goBack() 
+      {
+        window.history.back();
+      }
+    </script>
+    <button  id="upload" class="uploadFile">
+      <h1>Upload</h1>
+    </button>
+    <a href ="Create Profile Page" class="createProfile">
+      <img src="https://emap.georgetown.edu/wp-content/uploads/sites/241/2021/05/profile.jpg" alt="profile image" style="width:55px;height:55px;">
+      <script src="/js/add to database of people and create a database for the new name.js"></script>
+    </a>
+    <div class="titleline">
+    </div>
+</div>
+
+<div class="searchBar">
+  <input type="text" placeholder="Search File.." style="width:900px;height:25px;">
+  <script src="/js/search through database of saved documents.js"></script>
+</div>
+<div class="pageText">
+
+
+</body>
+</html>
