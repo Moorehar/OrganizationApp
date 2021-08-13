@@ -59,7 +59,7 @@ body {
   bottom: 68px;
   left: 175px;
   float: right;
-  width: 55px;
+  width: 65px;
   color: white;
   background:grey;
   padding-top: 3px;
@@ -68,6 +68,43 @@ body {
   border: 2px solid;
   cursor: pointer;
 }
+
+.profilePopup {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.profileMenu-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%; /* Could be more or less, depending on screen size */ 
+  height: 40%;
+}
+
+.Pclose {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold; 
+}
+
+.Pclose:hover,
+.Pclose:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 
 /* Style the Upload File Button */
 .uploadFile {
@@ -86,6 +123,42 @@ body {
 
 .uploadFile h1 {
   font-size: 12px;
+}
+
+.uploadPopup {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.uploadMenu-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%; /* Could be more or less, depending on screen size */ 
+  height: 40%;
+}
+
+.Uclose {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold; 
+}
+
+.Uclose:hover,
+.Uclose:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 /* The line which seperates the title from the buttons */
@@ -113,6 +186,20 @@ body {
   color: black;
   border: 2px solid;
 }
+
+.timeButton {
+  font-size: 5px;
+  text-align: left;
+  position: relative;
+  bottom: -100px;
+  right: 290px;
+  padding: 8px;
+  float: right;
+  width: 298px;
+  background: grey;
+  color: black;
+}
+
 </style>
 </head>
 <body>
@@ -130,23 +217,86 @@ body {
         window.history.back();
       }
     </script>
-    <button  id="upload" class="uploadFile">
+
+    <button id="myUpload" class="uploadFile">
       <h1>Upload</h1>
     </button>
-    <a href ="Create Profile Page" class="createProfile">
+    <div id="uploadMenu" class="uploadPopup">
+      <div class="uploadMenu-content">
+        <span class="Uclose">&times;</span>
+          <label for="rname">Upload</label>
+            Select file to upload:
+            <input type="file" name="fileToUpload" id="fileToUpload">
+            <input id='1' onclick="show(this.id)" type="submit" value="Upload File" name="submit">
+      </div>
+    </div>
+    <script>
+      var time = new Date();
+      var Ubtn = document.getElementById("myUpload")
+      var upload = document.getElementById("uploadMenu")
+      var Uspan = document.getElementsByClassName("Uclose")[0];
+      Ubtn.onclick = function() {
+        upload.style.display = "block";
+      }
+      Uspan.onclick = function() {
+        upload.style.display = "none";
+      }
+      window.onclick = function(event) {
+        if (event.target == menu) {
+          upload.style.display = "none";
+        }
+      }
+      function show(id){
+        if (id == 1)
+        {
+          document.getElementById('theTime').value=time;
+        }
+      }
+    </script>
+
+
+    <button id ="profileBtn" class="createProfile">
       <img src="https://emap.georgetown.edu/wp-content/uploads/sites/241/2021/05/profile.jpg" alt="profile image" style="width:55px;height:55px;">
-      <script src="/js/add to database of people and create a database for the new name.js"></script>
-    </a>
+    </button>
+    <div id="profileMenu" class="profilePopup">
+      <div class="profileMenu-content">
+        <span class="Pclose">&times;</span>
+        <form action="/Users/dorgo/OneDrive/Desktop/Web%20App/testDatabase1.php">
+          <p for="fname">Account Name: *find user account name*</p>
+          <p for="fname">Password: *find user account password*</p>
+          <a href="/Users/dorgo/OneDrive/Desktop/Web%20App/createAccount.html" type="submit" class="createAccountBtn">Need a new account? Click here!</a>
+        </form>
+      </div>
+    </div>
+    <script>
+      var Pbtn = document.getElementById("profileBtn")
+      var Pmenu = document.getElementById("profileMenu")
+      var Pspan = document.getElementsByClassName("Pclose")[0];
+      Pbtn.onclick = function() {
+        Pmenu.style.display = "block";
+      }
+      Pspan.onclick = function() {
+        Pmenu.style.display = "none";
+      }
+      window.onclick = function(event) {
+        if (event.target == menu) {
+          Pmenu.style.display = "none";
+        }
+      }
+    </script>
     <div class="titleline">
     </div>
 </div>
 
 <div class="searchBar">
-  <input type="text" placeholder="Search File.." style="width:900px;height:25px;">
+  <input type="text" placeholder="Search FILE.." style="width:900px;height:25px;">
   <script src="/js/search through database of saved documents.js"></script>
 </div>
 <div class="pageText">
 
+<div class="timeButton">
+  <input type='text' id="theTime" value="" style="width:290px;height:15px;font-size:10px">
+</div>
 
 </body>
 </html>

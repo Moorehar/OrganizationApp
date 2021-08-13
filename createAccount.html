@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Directory Creater</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Style the tile */
+.navBar {
+  padding: 5px;
+  text-align: left;
+  background: lightgrey;
+  color: black;
+}
+
+/* Increase the font size of the h1 element */
+.navBar h1 {
+  font-size: 30px;
+}
+
+.mainMenuButton {
+  background: lightgrey;
+  text-align: left;
+  color: black;
+  cursor: pointer;
+}
+.mainMenuButton h1 {
+  font-size: 30px;
+}
+/* Style the go back button */
+.goBack {
+  position: relative;
+  bottom: 63px;
+  right: 345px;
+  padding: 10px;
+  float: right;
+  width: 90px;
+  height: 55px;
+  text-align: center;
+  background: grey;
+  color: white;
+  border: 2px solid;
+  cursor: pointer;
+}
+
+.goBack h1 {
+  font-size: 12px;
+}
+
+/* The line which seperates the title from the buttons */
+.titleline {
+  background: white;
+    position: relative;
+    bottom: 100px;
+    right: 370px;
+    padding: 5px;
+    float: right;
+    height: 150px;
+}
+
+.accountBox {
+  margin: auto;
+  width: 40%;
+  height: 600px;
+  padding: 10px;
+  position: relative;
+  top: 60px;
+  background: #b0adad;
+}
+
+.textEdit {
+  font-size: 25px;
+}
+
+.textEdit1 {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+</style>
+</head>
+<body>
+
+<div class="navBar">
+    <a href="/Users/dorgo/OneDrive/Desktop/Web%20App/OrganizationalApp.html" class="mainMenuButton">
+      <h1>Organize</h1>
+    </a>
+    <button  onclick="goBack()" class="goBack">
+      <h1>Go Back</h1>
+    </button>
+    <script>
+      function goBack() 
+      {
+        window.history.back();
+      }
+    </script>
+    <div class="titleline">
+    </div>
+</div>
+
+<div class="accountBox">
+  <form action="/Users/dorgo/OneDrive/Desktop/Web%20App/testDatabase1.php">
+    <p for="accountName" class="textEdit1">Email Address:</p>
+    <input class="textEdit" type="email" id="accountName" name="accountName" required><br><br>
+    <p for="password" class="textEdit1">Password:</p>
+    <input class="textEdit" type="text" id="password" name="password" required><br><br>
+    <p for="confirmPassword" class="textEdit1">Confirm Password:</p>
+    <input class="textEdit" type="text" id="confirmPassword" name="confirmPassword" required><br><br>
+    <a class="textEdit" href="/Users/dorgo/OneDrive/Desktop/Web%20App/OrganizationalApp.html" type="submit" class="createAccountBtn">Confirm your account! Click here!</a>
+    <script>
+      import java.io.File;  // Import the File class
+
+      File myObj = new File("/Users/dorgo/OneDrive/Desktop/Web%20App/testFile.php"); 
+    </script>
+  </form>
+</div>
+
+</body>
+</html>
